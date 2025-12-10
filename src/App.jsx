@@ -18,7 +18,7 @@ const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 // Modelli Standard per account con fatturazione
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
-const IMAGEN_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=";
+const IMAGEN_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=";
 const teamMembers = [
     { 
         id: 1, 
