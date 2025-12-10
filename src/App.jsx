@@ -14,7 +14,7 @@ const EXTRA_COST = 300.00;
 
 // --- CONFIGURAZIONE API ---
 // IMPORTANTE: INCOLLA QUI LA TUA CHIAVE API DI GOOGLE AI STUDIO!
-const API_KEY = "AIzaSyB0FRhAcp52QW9wC5z3FSWZqeqKopS8rqA"; 
+const API_KEY = const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY || "";
 
 // Modelli Standard per account con fatturazione
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=";
