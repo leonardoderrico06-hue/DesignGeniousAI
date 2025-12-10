@@ -13,7 +13,7 @@ const STANDARD_KEYWORDS = [
 const EXTRA_COST = 300.00;
 
 // --- CONFIGURAZIONE API ---
-const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const apikey = import.meta.env.VITE_GOOGLE_API_KEY;
 
 // MODELLI GOOGLE
 const GEMINI_TEXT_MODEL_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=";
