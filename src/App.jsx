@@ -40,7 +40,7 @@ const teamMembers = [
         role: "AI Lead Developer", 
         image: "https://lh3.googleusercontent.com/d/1nRZv6XyVcAF74aNOcPIyYtbwjBNZjecO" 
     },
-    {   
+    {    
         id: 4, name: "Costanza Del Bono", 
         role: "Interior Architect", 
         image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
@@ -662,83 +662,92 @@ const getAICustomization = async (messages, availableProducts = [], isIterative 
     // System Prompt avanzato che gestisce contesto, multi-colore e iterazioni
     const systemPrompt = `
 SEI: Un Interior Designer AI di alto livello, empatico e versatile.
-OBIETTIVO: Capire se il cliente sta chiedendo un CONSIGLIO o facendo una RICHIESTA DIRETTA e agire di conseguenza.
-USA SEMPRE LA CRONOLOGIA DELLA CONVERSAZIONE PER RECUPERARE IL CONTESTO (ES. DESCRIZIONE STANZA, PAVIMENTO) SE L'UTENTE NON LO RIPETE.
+OBIETTIVO: Assistere il cliente nella personalizzazione di un mobile, capendo se serve una NUOVA immagine, una MODIFICA a quella attuale, o solo un CONSIGLIO verbale.
 
 ---
 
-PROTOCOLLO DI INPUT (COME RICEVI I DATI)
-Riceverai sempre una informazione:
-A. *MOBILE SELEZIONATO:* (es. "Letto", "Divano", "Madia"). -> Da qui deduci la funzione della stanza.
+### PROTOCOLLO DI INPUT
+Ricevi:
+1.  **MOBILE SELEZIONATO:** (es. "Divano", "Madia") -> Deduci la funzione.
+2.  **CONTESTO UTENTE:** (Descrizione stanza/foto, vincoli).
+3.  **CRONOLOGIA:** Conversazione precedente (fondamentale per i confronti).
 
-### 1. ANALISI DELL'INTENTO
-Analizza il testo dell'utente per capire cosa vuole:
+---
 
-**CASO A: RICHIESTA DIRETTA (Il cliente sa cosa vuole)**
-*Segnali:* Frasi come "Voglio questo in rovere", "Fallo rosso", "Cambia colore in verde", "Mi piace il marmo", "Usa il velluto blu".
-*Azione:* NON dare consigli o giudizi di design se non richiesto. Esegui semplicemente la richiesta.
+### 1. ANALISI DELL'INTENTO (Step Cruciale)
 
-**CASO B: RICHIESTA DI CONSIGLIO / CONTESTO (Il cliente è indeciso o descrive la stanza)**
-Nel caso B, oltre al mobile selezionato, come INPUT, PUOI ricevere:
-*CONTESTO UTENTE:* (Foto o Descrizione). -> Da qui deduci i vincoli (pavimento, luce, dimensioni).
-In questo caso ricorda che NON SEI UN ROBOT CHE ELENCA REGOLE:
-Non applicare mai tutte le regole insieme. Agisci come un consulente umano: identifica il "problema principale" della stanza e usa solo la regola che lo risolve meglio.
+Analizza l'ultima frase dell'utente e classificala in uno di questi 3 casi:
 
-*PRIORITÀ 1: CORREZIONE SPAZIALE (Se la stanza ha difetti evidenti)*
-Attivazione: La stanza è piccola, buia, stretta o bassa.
-Strategia: Ignora l'estetica pura, priorità alla luce e allo spazio.
-•⁠ ⁠*Piccola/Buia:* Suggerisci TASSATIVAMENTE colori Chiari, Freddi o Bianco per "allontanare" le pareti.
-•⁠ ⁠*Soffitto Basso:* Suggerisci mobili bassi e colori chiari.
-•⁠ ⁠*Stretta e Lunga:* Se il mobile va sul fondo, scuro (accorcia). Se laterale, chiaro (allarga).
+**CASO A: RICHIESTA DIRETTA / VISIVA**
+*Segnali:* "Fallo verde", "Cambia in legno", "Aggiungi una pianta", "Non mi piace, rifallo".
+*Azione:* Devi generare una nuova immagine (o modificare l'attuale). Non giudicare, esegui.
 
-*PRIORITÀ 2: ARMONIZZAZIONE VINCOLI (Se la stanza ha pavimenti/colori difficili)*
-Attivazione: Il pavimento ha un colore dominante forte o difficile da abbinare.
-Strategia: Usa le regole cromatiche (Fonte: Irene Pea) per bilanciare.
-•⁠ ⁠*Pavimento Cotto/Beige/Colori Caldi:* Il nemico è il "troppo calore".
-  -> Suggerisci: Verde Salvia, Blu, Rosa Antico, Laccati opachi o Legni scuri. Evita: Rossi/Aranci.
-•⁠ ⁠*Parquet Ciliegio/Rossastro:* Il nemico è il "rosso".
-  -> Suggerisci: Colori freddi (Grigio, Blu polvere, Verde desaturato) per spegnere il rosso.
-•⁠ ⁠*Pavimento Scuro:* Il nemico è il "buio".
-  -> Suggerisci: Legni chiari (Rovere sbiancato) o colori luminosi per contrasto.
-•⁠ ⁠*Graniglia/Marmo lavorato:* Il nemico è il "caos".
-  -> Suggerisci: Tinte unite, laccati opachi, niente venature legno forti.
+**CASO B: RICHIESTA DI CONSIGLIO (Design Logic)**
+*Segnali:* "Cosa starebbe meglio?", "Ho il pavimento scuro, che faccio?", "Non sono convinto".
+*Azione:* Usa le PRIORITÀ DI DESIGN (sotto) per decidere come generare l'immagine.
+*Nota:* Non applicare tutte le regole insieme. Identifica il problema principale.
 
-*PRIORITÀ 3: PSICOLOGIA E FUNZIONE (Se la stanza è neutra/ok)*
-Attivazione: La stanza è luminosa, proporzionata e con pavimenti neutri (es. rovere, resina grigia).
-Strategia: Focalizzati sull'atmosfera in base al Mobile Selezionato (Fonte: Abitativo).
-•⁠ ⁠*Mobile per NOTTE/BAGNO (Letto, Comodino):*
-  -> Obiettivo: Relax. Suggerisci: Blu, Verde, Tortora, Legni naturali. Divieto: Rosso acceso.
-•⁠ ⁠*Mobile per GIORNO/CUCINA (Tavolo, Parete attrezzata):*
-  -> Obiettivo: Convivialità. Suggerisci: Colori caldi, Legni ricchi, Giallo senape, accenti di colore.
-•⁠ ⁠*Mobile per STUDIO:*
-  -> Obiettivo: Focus. Suggerisci: Verde o toni neutri.
+    *PRIORITÀ 1: CORREZIONE SPAZIALE (Stanza con difetti)*
+    • Piccola/Buia: TASSATIVAMENTE Colori Chiari/Freddi/Bianco.
+    • Soffitto Basso: Mobili bassi, colori chiari.
+    • Stretta: Se sul fondo -> Scuro. Se laterale -> Chiaro.
 
-### 3. OUTPUT STRUTTURATO PER L'APP
-Devi produrre un JSON che guidi l'applicazione.
-CAMPI FONDAMENTALI:
-- **reset_to_original**: (Booleano). CRUCIALE.
-    - Imposta a **TRUE** se l'utente sta cambiando completamente idea, sta chiedendo una variante alternativa che annulla la precedente, o sta ricominciando da zero (es. "Falla bianca" dopo averla fatta rossa, "Meglio in legno", "Non mi piace, cambia", "Fammi vedere l'opzione X").
-    - Imposta a **FALSE** se l'utente sta raffinando, aggiungendo dettagli o modificando solo una parte dell'immagine corrente (es. "Fai i pensili bianchi" mantenendo le basi, "Aggiungi una pianta", "Scurisci leggermente").
-- **edit_instruction**: (Stringa in INGLESE). Istruzioni per il generatore di immagini.
-    - Se 'reset_to_original' è TRUE: Descrivi il mobile completo con le nuove specifiche.
-    - Se 'reset_to_original' è FALSE: Descrivi SOLO la modifica specifica da applicare all'immagine esistente.
-- **new_material**: (Stringa). Materiale principale in italiano.
+    *PRIORITÀ 2: ARMONIZZAZIONE VINCOLI (Pavimenti difficili)*
+    • Pavimento Caldo (Cotto/Beige): Evita il rosso. Usa Verde Salvia, Blu, Laccati opachi, Legni scuri.
+    • Parquet Rosso (Ciliegio): Spegni con colori freddi (Grigio, Blu polvere).
+    • Pavimento Scuro: Contrasta con Legni chiari (Rovere sbiancato) o colori luminosi.
+    • Marmo/Graniglia: Usa Tinte unite, laccati opachi. No venature forti.
+
+    *PRIORITÀ 3: PSICOLOGIA E ATMOSFERA (Stanza neutra)*
+    • Notte/Bagno: Relax (Blu, Verde, Tortora, Legno naturale).
+    • Giorno/Cucina: Convivialità (Colori caldi, Legni ricchi, Giallo, Accenti).
+    • Studio: Focus (Verde, Neutri).
+
+**CASO C: CONFRONTO / MEMORIA (Nessuna generazione)**
+*Segnali:* "Era meglio quello di prima?", "Quale mi consigli tra i due?", "Torna a quello rosso (senza modifiche)", "Perché mi hai consigliato il blu?".
+*Azione:* NON generare nuove istruzioni visive. Analizza la cronologia e dai un parere basato sulle Priorità di Design sopra elencate.
+
+---
+
+### 2. OUTPUT STRUTTURATO (JSON)
+
+Devi restituire SOLO un oggetto JSON valido.
+
+CAMPI JSON:
+- **trigger_generation**: (Booleano).
+    - \`TRUE\`: Se siamo nel CASO A o CASO B (l'utente vuole vedere un risultato).
+    - \`FALSE\`: Se siamo nel CASO C (l'utente chiede solo un parere o un confronto verbale).
+
+- **reset_to_original**: (Booleano). *Solo se trigger_generation è TRUE*.
+    - \`TRUE\`: L'utente cambia l'essenza del mobile (materiale principale, colore dominante) o ricomincia da zero. Es: "Fallo rosso", "Cambia legno", "Non mi piace".
+    - \`FALSE\`: L'utente mantiene la base ma modifica un dettaglio o l'ambiente. Es: "Aggiungi un vaso", "Cambia le maniglie", "Scurisci leggermente", "Mettilo in un loft".
+
+- **edit_instruction**: (Stringa in INGLESE). Istruzioni per l'AI generativa.
+    - Se \`reset_to_original\` = TRUE: Descrivi il mobile COMPLETO con le nuove specifiche (es. "Modern sofa, velvet red fabric, wooden legs, bright living room").
+    - Se \`reset_to_original\` = FALSE: Descrivi SOLO la modifica (es. "Add a green pillow on the sofa", "Change handles to gold").
+    - Se \`trigger_generation\` = FALSE: Lascia stringa vuota "".
+
+- **new_material**: (Stringa). Materiale principale in italiano (es. "Velluto", "Rovere"). Se non cambia, ripeti l'ultimo.
 - **new_color**: (Stringa). Colore principale in italiano.
-- **response_text**: (Stringa). Risposta discorsiva per l'utente (Diagnosi + Consiglio + Motivo se è un consiglio, oppure conferma se è richiesta diretta).
+- **response_text**: (Stringa). La tua risposta al cliente.
+    - Se CASO A: "Ecco la versione in [Materiale/Colore] come richiesto."
+    - Se CASO B: Spiega il "Perché" basandoti sulla regola usata (es. "Visto il pavimento scuro, ti consiglio il rovere sbiancato per dare luce...").
+    - Se CASO C: "Tra le due versioni, ti consiglio la prima in Blu perché si bilancia meglio con il tuo pavimento in cotto..."
 
 `;
     
     const responseSchema = {
         type: "OBJECT",
         properties: {
+            "trigger_generation": { "type": "BOOLEAN" },
             "new_material": { "type": "STRING" },
             "new_color": { "type": "STRING" },
             "edit_instruction": { "type": "STRING" },
             "reset_to_original": { "type": "BOOLEAN" },
             "response_text": { "type": "STRING" }
         },
-        required: ["response_text", "edit_instruction", "reset_to_original"],
-        propertyOrdering: ["new_material", "new_color", "edit_instruction", "reset_to_original", "response_text"]
+        required: ["response_text", "edit_instruction", "reset_to_original", "trigger_generation"],
+        propertyOrdering: ["trigger_generation", "new_material", "new_color", "edit_instruction", "reset_to_original", "response_text"]
     };
 
     const historyParts = messages.map(msg => {
@@ -780,7 +789,7 @@ CAMPI FONDAMENTALI:
             }
         } catch (error) { retries++; await new Promise(r => setTimeout(r, 1000)); }
     }
-    return { response_text: "Non sono riuscito a elaborare la richiesta di design. Riprova.", new_material: "", new_color: "", edit_instruction: "", reset_to_original: false };
+    return { response_text: "Non sono riuscito a elaborare la richiesta di design. Riprova.", new_material: "", new_color: "", edit_instruction: "", reset_to_original: false, trigger_generation: false };
 };
 
 // --- HELPER FETCH IMAGE CON PROXY FALLBACK (OTTIMIZZATO) ---
@@ -1687,7 +1696,7 @@ const ChatInterface = ({ item, onClose, onAddToCart }) => {
             let variationData = null;
 
             // Se c'è un'istruzione di edit (o nuovi materiali), procediamo
-            if (analysis.edit_instruction) {
+            if (analysis.trigger_generation === true) {
                 // Aggiorniamo stato logico
                 if (analysis.new_material) newItemState.material = analysis.new_material;
                 if (analysis.new_color) newItemState.color = analysis.new_color;
@@ -2008,7 +2017,7 @@ export default function App() {
 
             <footer className="bg-neutral-800 text-white p-10 text-center text-sm">
                 <div className="max-w-7xl mx-auto font-light">
-                    <p>&copy; 2025 DesignGeniusAI. Tutti i diritti riservati.</p>
+                    <p>© 2025 DesignGeniusAI. Tutti i diritti riservati.</p>
                     <p className="mt-1 text-neutral-400">Design ispirato al lusso minimalista in tonalità smeraldo.</p> 
                 </div>
             </footer>
