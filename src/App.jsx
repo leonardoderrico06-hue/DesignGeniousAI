@@ -1574,8 +1574,7 @@ const ChatInterface = ({ item, onClose, onAddToCart }) => {
     const fileInputRef = useRef(null);
     const [messages, setMessages] = useState([{ 
         role: 'ai', 
-        text: `Ciao! Sono il tuo Interior Designer AI. Carica una foto della stanza dove vorresti mettere "${item.title}" o descrivimela. Ti aiuterò a scegliere il colore e il tessuto perfetto!` 
-    }]);
+        text: `Ciao! Sono Giotto, il tuo Interior Designer AI 🎨. Sono in grado di analizzare la tua stanza: carica una foto o descrivimela per avere consigli di stile. Posso anche generare render fotorealistici basati sulle tue richieste. Cosa aspetti? Trasformiamo insieme "${item.title}"!` 
     const [input, setInput] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
