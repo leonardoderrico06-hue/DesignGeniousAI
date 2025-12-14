@@ -40,7 +40,7 @@ const teamMembers = [
         role: "AI Lead Developer", 
         image: "https://lh3.googleusercontent.com/d/1nRZv6XyVcAF74aNOcPIyYtbwjBNZjecO" 
     },
-    {   
+    {    
         id: 4, name: "Costanza Del Bono", 
         role: "Interior Architect", 
         image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
@@ -73,7 +73,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/01/Rovere-Miele-Anta-Liscia2-scaled.jpg",
         description: "Prodotto da Stosa Cucine. Evolution System. Il calore del Rovere con doghe verticali per una naturalezza autentica e moderna.",
         initial_material: "Rovere Dogato",
-        initial_color: "Miele",
+        initial_color: "Legno Miele",
         tipologia: "CUCINA"
     },
     {
@@ -85,7 +85,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2021/12/Metropolis-Gallery-4.jpg",
         description: "Prodotto da Stosa Cucine. Stile eclettico che unisce materiali tecnici come il PET e il Fenix a finiture materiche.",
         initial_material: "PET e Fenix",
-        initial_color: "Grigio Caldo",
+        initial_color: "Grigio chiaro",
         tipologia: "CUCINA"
     },
     {
@@ -97,7 +97,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/01/01.-Finitura-Bronzo-per-gole-e-zoccoli.jpg",
         description: "Prodotto da Stosa Cucine. Il pregio del vetro. Riflessi di luce e profondità per una cucina dal design puro ed essenziale.",
         initial_material: "Vetro",
-        initial_color: "Bronzo",
+        initial_color: "Nero",
         tipologia: "CUCINA"
     },
     {
@@ -109,7 +109,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/02/Color-Trend-Gallery-5.jpg",
         description: "Prodotto da Stosa Cucine. Massima libertà espressiva con ante laccate disponibili in una vasta gamma di colori.",
         initial_material: "Laccato Lucido",
-        initial_color: "Timo e Magnolia",
+        initial_color: "Beige chiaro",
         tipologia: "CUCINA"
     },
     {
@@ -121,7 +121,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/02/Gallery-Karma-3.jpg",
         description: "Prodotto da Stosa Cucine. Look System. L'anta liscia essenziale valorizzata da materiali materici e presa maniglia integrata.",
         initial_material: "Rovere Materico",
-        initial_color: "Corteccia",
+        initial_color: "Giallo ocra e marrone scuro",
         tipologia: "CUCINA"
     },
     {
@@ -133,7 +133,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/01/CITY-02-VISTA-03-scaled.jpg",
         description: "Prodotto da Stosa Cucine. Ispirazione vintage e industrial. Dettagli in metallo e legno per uno stile metropolitano deciso.",
         initial_material: "Legno e Metallo",
-        initial_color: "Rovere Jeans",
+        initial_color: "Grigio",
         tipologia: "CUCINA"
     },
     {
@@ -145,7 +145,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/01/Gallery-Infinity-1.jpg",
         description: "Prodotto da Stosa Cucine. Versatile e giovane. Soluzioni creative con materiali innovativi come PET e Fenix.",
         initial_material: "PET",
-        initial_color: "Bianco Assoluto",
+        initial_color: "Bronze Metal",
         tipologia: "CUCINA"
     },
     {
@@ -169,7 +169,7 @@ const catalogItems = [
         imageUrl: "https://www.stosapointroma.com/wp-content/uploads/2025/09/stosa-cucine-roma-newport-15.jpeg",
         description: "Prodotto da Stosa Cucine. Classic Glam. Un'anta a telaio contemporanea che reinterpreta lo stile internazionale.",
         initial_material: "Frassino",
-        initial_color: "Beige Avena",
+        initial_color: "Nero e legno",
         tipologia: "CUCINA"
     },
     {
@@ -181,7 +181,7 @@ const catalogItems = [
         imageUrl: "https://stosacucine.store/wp-content/uploads/2023/02/TOSCA-2023-ok-4-2560x800.jpg",
         description: "Prodotto da Stosa Cucine. L'eleganza del legno di Frassino. Dettagli raffinati e doghe per uno stile classico senza tempo.",
         initial_material: "Frassino",
-        initial_color: "Beige Angora",
+        initial_color: "Bianco",
         tipologia: "CUCINA"
     },
     {
@@ -193,7 +193,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/02/Beverly-gallery-05.jpg",
         description: "Prodotto da Stosa Cucine. Versatilità stilistica. Un classico leggero che gioca con i contrasti di colore e volume.",
         initial_material: "Legno Frassino",
-        initial_color: "Bianco e Savana",
+        initial_color: "Verde chiaro",
         tipologia: "CUCINA"
     },
     {
@@ -205,7 +205,7 @@ const catalogItems = [
         imageUrl: "https://www.piermarini.it/images/thumb/thumb_1569594078.jpg",
         description: "Prodotto da Stosa Cucine. Lo stile garage incontra il classico. Anta dogata in rovere per un look loft sofisticato.",
         initial_material: "Rovere",
-        initial_color: "Nordic",
+        initial_color: "Rovere Naturale",
         tipologia: "CUCINA"
     },
     {
@@ -217,7 +217,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/02/Gallery-01-3.jpg",
         description: "Prodotto da Stosa Cucine. Il calore della tradizione. Linee morbide e colori pastello per una cucina accogliente.",
         initial_material: "Legno Laccato",
-        initial_color: "Bianco Cotone",
+        initial_color: "Bianco Panna",
         tipologia: "CUCINA"
     },
     {
@@ -241,7 +241,7 @@ const catalogItems = [
         imageUrl: "https://www.stosacucine.com/app/uploads/2022/02/Gallery-02-5.jpg",
         description: "Prodotto da Stosa Cucine. Il lusso del classico italiano. Cornici intagliate e laccature preziose per una cucina regale.",
         initial_material: "Laccato Opaco",
-        initial_color: "Bianco Avorio",
+        initial_color: "Beige chiaro",
         tipologia: "CUCINA"
     },
     { 
@@ -253,7 +253,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/1f022ad9-69d4-491d-83cc-3a236f090ebf/nuctwf/std/900x0/Jeometrica_pag_8.jpg",
         description: "Prodotto da Scavolini. Design by Luca Nichetto. Un sistema d'arredo evolutivo che unisce memoria e modernità.",
         initial_material: "Laccato Opaco",
-        initial_color: "Grigio Ferro",
+        initial_color: "Grigio Antracite e panna",
         tipologia: "CUCINA"
     },
     { 
@@ -265,7 +265,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/ddb3c284-e605-4eab-acb3-99b4bfdda24f/nuctwf/std/1400x0/Diesel%20Get%20Together_pag_22.jpg",
         description: "Prodotto da Scavolini. Design by Diesel Creative Team. La cucina come luogo sociale, mix industrial.",
         initial_material: "Metallo e Legno",
-        initial_color: "Verde Industrial",
+        initial_color: "Legno chiaro",
         tipologia: "CUCINA"
     },
     { 
@@ -277,7 +277,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/b2696864-16cf-46e4-98a1-e49945fd82d6/nuctwf/std/900x0/Carattere_Restyling_I_copertina.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. Eleganza internazionale dal gusto classico-contemporaneo.",
         initial_material: "Laccato Opaco",
-        initial_color: "Bianco Prestige",
+        initial_color: "Bianco Lucido",
         tipologia: "CUCINA"
     },
     { 
@@ -289,7 +289,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/353020e7-ee4f-4726-b9a7-fc186dc3e440/nuctwf/std/900x0/Mia_I_copertina.jpg",
         description: "Prodotto da Scavolini. L'interpretazione domestica della cucina professionale.",
         initial_material: "Acciaio",
-        initial_color: "Acciaio Scuro",
+        initial_color: "Nero",
         tipologia: "CUCINA"
     },
     { 
@@ -301,7 +301,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/0c9e6c85-0de7-44f8-a984-0851c931b068/nuctwf/std/900x0/Lumina_prev_pag_8.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. Linee pulite e presa maniglia a 40°.",
         initial_material: "Vetro Dogato",
-        initial_color: "Bianco",
+        initial_color: "Grigio",
         tipologia: "CUCINA"
     },
     { 
@@ -313,7 +313,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/4d84e4f3-d18e-42f4-87ad-95e4f1a3e740/nuctwf/std/900x0/Baltimora_pag_40.jpg",
         description: "Prodotto da Scavolini. Il classico di lusso. Legno massello e dettagli preziosi.",
         initial_material: "Frassino Massello",
-        initial_color: "Bianco Assoluto",
+        initial_color: "Grigio chiaro",
         tipologia: "CUCINA"
     },
     { 
@@ -325,7 +325,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/889f1358-b494-488a-bfc7-6b4272d57a6d/nuctwf/std/900x0/Libra_prev_pag_2.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. Armonia di superfici lisce e dogate.",
         initial_material: "Laminato",
-        initial_color: "Grigio Perla",
+        initial_color: "Beige chiaro",
         tipologia: "CUCINA"
     },
     { 
@@ -337,7 +337,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/38e855c9-602c-473e-bc89-53bcbc3d77df/nuctwf/std/1920x0/Formalia_Outdoor_pag_24-25.jpg",
         description: "Prodotto da Scavolini. Design Vittore Niolu. La cucina esce all'aperto, resistente e di design.",
         initial_material: "Acciaio Inox",
-        initial_color: "Acciaio",
+        initial_color: "Grigio",
         tipologia: "CUCINA ESTERNA"
     },
     { 
@@ -349,7 +349,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/b967aa81-dc5b-4e34-8bf2-9e40c67d2a53/nuctwf/std/900x0/MIKO_pag_12.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. L'essenza del minimalismo con attenzione ai materiali ricercati.",
         initial_material: "Laccato Opaco",
-        initial_color: "Blu Moon",
+        initial_color: "Beige",
         tipologia: "BAGNO"
     },
     { 
@@ -361,7 +361,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/c375ee6d-7b31-45bd-b8e2-33e0c715096d/nuctwf/std/1400x0/Gym%20Space_pag_108.jpg",
         description: "Prodotto da Scavolini. Design Mattia Pareschi. Il bagno incontra il fitness con spalliera integrata.",
         initial_material: "Legno Chiaro",
-        initial_color: "Rovere Nodato",
+        initial_color: "Verde",
         tipologia: "BAGNO"
     },
     { 
@@ -373,7 +373,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/97fe5c33-483e-43a8-bdf5-b2ca510d20cc/nuctwf/std/900x0/LIDO_pag_20.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. Anta squadrata e gola arrotondata. Finiture perlate.",
         initial_material: "Laccato Perlato",
-        initial_color: "Cuvée",
+        initial_color: "Verde acqua",
         tipologia: "BAGNO"
     },
     { 
@@ -385,7 +385,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/5a5b042f-cde0-47b9-aee2-975bec307a6d/nuctwf/std/1920x0/DIESEL-MISFITS-BATH_pag_10-11.jpg?scalemode=manual&cropmode=pixel&adjustcrop=extend&cropx=-1&cropy=1162&cropw=4065&croph=1161",
         description: "Prodotto da Scavolini. Design Diesel Living. Ispirato ai carrelli industriali 'Misfits'.",
         initial_material: "Metallo e Vetro",
-        initial_color: "Coal Black",
+        initial_color: "Nero Opaco",
         tipologia: "BAGNO"
     },
     { 
@@ -397,7 +397,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/60180d35-a003-474c-9860-b1bf7c5694f1/nuctwf/std/900x0/RIVO_pag_34.jpg",
         description: "Prodotto da Scavolini. Design Castiglia Associati. Design essenziale con gola inclinata a 45 gradi.",
         initial_material: "Laccato Lucido",
-        initial_color: "Bianco Prestige",
+        initial_color: "Bianco Lucido",
         tipologia: "BAGNO"
     },
     { 
@@ -409,7 +409,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/55b35533-9fe2-40d6-9aeb-fbed72466263/nuctwf/std/1400x0/Diesel%20Open%20Workshop_BATH_pag_3.jpg",
         description: "Prodotto da Scavolini. Design Diesel Creative Team. Stile 'Warm Industrial'.",
         initial_material: "Metallo e Legno",
-        initial_color: "Bronzo",
+        initial_color: "Nero",
         tipologia: "BAGNO"
     },
     { 
@@ -421,7 +421,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/7490c931-69d6-4725-8ed6-1b803778e160/nuctwf/std/900x0/Tratto_pag_12.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. L'anta con profilo maniglia integrato disegna una linea continua.",
         initial_material: "Rovere",
-        initial_color: "Rovere Naturale",
+        initial_color: "Bianco",
         tipologia: "BAGNO"
     },
     { 
@@ -433,7 +433,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/b6916e7b-8a71-4a6d-ad59-5b5485859281/nuctwf/std/900x0/Juno_pag_57.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. Linee geometriche e anta con presa maniglia a 'J'.",
         initial_material: "Laccato Opaco",
-        initial_color: "Grigio Ferro",
+        initial_color: "Bianco",
         tipologia: "BAGNO"
     },
     { 
@@ -445,7 +445,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/90acb881-4a10-4309-8b92-ca71fe5eaff5/nuctwf/std/900x0/Magnifica_pag_61.jpg",
         description: "Prodotto da Scavolini. Design Gianni Pareschi. Un classico contemporaneo d'eccellenza.",
         initial_material: "Laccato Lucido",
-        initial_color: "Avorio e Oro",
+        initial_color: "Crema e Oro",
         tipologia: "BAGNO"
     },
     { 
@@ -457,7 +457,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/0828951f-bdd4-4a37-b2b7-91af8dbfd930/nuctwf/std/900x0/Lagu_pag_42.jpg",
         description: "Prodotto da Scavolini. Design Castiglia Associati. Anta con taglio inclinato.",
         initial_material: "Laccato Lucido",
-        initial_color: "Verde Aloe",
+        initial_color: "Bianco",
         tipologia: "BAGNO"
     },
     { 
@@ -481,7 +481,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/847cca2d-8eac-4abd-994a-dfdca95f1886/nuctwf/std/900x0/Dandy_Plus_Bath_pag_13.jpg",
         description: "Prodotto da Scavolini. Design Novembre Studio. Pop e tecnologico con Task Bar integrata.",
         initial_material: "Laminato",
-        initial_color: "Rosso Corallo",
+        initial_color: "Bianco",
         tipologia: "BAGNO"
     },
     { 
@@ -493,7 +493,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/2fd523a7-02cc-461a-99c4-80eb76ac44c8/nuctwf/std/1400x0/Formalia%20Bath_pag_22.jpg",
         description: "Prodotto da Scavolini. Design Vittore Niolu. Estensione del sistema cucina con Sistema Parete Status.",
         initial_material: "Decorativo",
-        initial_color: "Ruggine",
+        initial_color: "Bronzo",
         tipologia: "BAGNO"
     },
     { 
@@ -505,7 +505,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/8881c70d-baf5-4a1b-bdd5-1f274c00523e/nuctwf/std/900x0/AQUO_pag_22_23.jpg",
         description: "Prodotto da Scavolini. Design Castiglia Associati. Estetica contemporanea e minimale.",
         initial_material: "Laccato",
-        initial_color: "Grigio Titanio",
+        initial_color: "Beige scuro",
         tipologia: "BAGNO"
     },
     { 
@@ -517,7 +517,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/a1e9a590-b7cd-41de-9b9d-4c9b803a63f0/nuctwf/std/800x0/Motus%202022_pag_51.jpg",
         description: "Prodotto da Scavolini. Sistema modulare versatile che estende l'estetica della cucina al living.",
         initial_material: "Decorativo",
-        initial_color: "Rovere Gold",
+        initial_color: "Blu chiaro",
         tipologia: "LIVING"
     },
     { 
@@ -529,7 +529,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/3b82f6ea-f059-4826-b5b7-58fe5be7859c/nuctwf/std/900x0/08_SIDEBOARD_NET_PAG_17.jpg",
         description: "Prodotto da Scavolini. Versatilità per arredare la tua casa. Madie eleganti.",
         initial_material: "Laccato Lucido",
-        initial_color: "Visone",
+        initial_color: "Grigio",
         tipologia: "MADIA"
     },
     { 
@@ -541,7 +541,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/b5104044-3c44-4377-bb45-018333d4f901/nuctwf/std/1400x0/Formalia_pag_43.jpg",
         description: "Prodotto da Scavolini. Il sistema giorno aperto e flessibile. Struttura a giorno.",
         initial_material: "Metallo",
-        initial_color: "Nero e Ruggine",
+        initial_color: "Beige metallizzato",
         tipologia: "LIVING"
     },
     { 
@@ -553,7 +553,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/8f4e110f-e206-401b-b189-5b46e0443375/nuctwf/std/900x0/Walk-in-Fluida_pag_36-37.jpg",
         description: "Prodotto da Scavolini. Design Vuesse. Organizzazione perfetta dei volumi in un design curato.",
         initial_material: "Noce Garden",
-        initial_color: "Grigio Titanio",
+        initial_color: "Nero",
         tipologia: "GUARDAROBA"
     },
     {
@@ -565,7 +565,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/c5d79edb-52f4-4936-96e1-4178b2ceaaf0/nuctwf/std/900x0/Walk-in-Fluida_pag_24-25.jpg",
         description: "Prodotto da Scavolini. Composizione lineare con ante laccato opaco Bianco Prestige. Eleganza essenziale.",
         initial_material: "Laccato Opaco",
-        initial_color: "Bianco Prestige",
+        initial_color: "Nero",
         tipologia: "GUARDAROBA"
     },
     {
@@ -577,7 +577,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/5a1fe2de-91e0-44ce-8fc4-80a911ecaa76/nuctwf/std/0x0/Walk-in-Fluida_pag_22-23.jpg?scalemode=manual&cropmode=pixel&adjustcrop=extend&cropx=-3&cropy=445&cropw=4074&croph=1164",
         description: "Prodotto da Scavolini. Soluzione ad angolo con ante laccato opaco Grigio Titanio e ante telaio Acciaio Scuro.",
         initial_material: "Laccato e Vetro",
-        initial_color: "Grigio Titanio",
+        initial_color: "Nero",
         tipologia: "GUARDAROBA"
     },
     {
@@ -589,7 +589,7 @@ const catalogItems = [
         imageUrl: "https://immagini.designbest.com/pictures/product-105640-95608.jpg?tr=h-600",
         description: "Prodotto da Scavolini. Il lusso della pelle. Ante in pelle Grigio Perla abbinate a telai Grigio Antracite.",
         initial_material: "Pelle",
-        initial_color: "Grigio Perla",
+        initial_color: "Nero e beige",
         tipologia: "GUARDAROBA"
     },
     {
@@ -601,7 +601,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/332a63f0-57eb-45cb-916f-6a22bc2697fd/nuctwf/std/1920x0/Walk-in-Fluida_pag_34-35.jpg?scalemode=manual&cropmode=pixel&adjustcrop=extend&cropx=1&cropy=603&cropw=4095&croph=1170",
         description: "Prodotto da Scavolini. Composizione a golfo (U-shaped) con ante telaio Acciaio Scuro e vetro Stopsol.",
         initial_material: "Vetro Stopsol",
-        initial_color: "Acciaio Scuro",
+        initial_color: "Beige",
         tipologia: "GUARDAROBA"
     },
     {
@@ -613,7 +613,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/6d7a82a2-ab01-4dbd-93d4-c73af5c32e10/ibvpzo/std/960x0/picture.jpg?format=WEBP",
         description: "Prodotto da Scavolini. Calore naturale. Ante in impiallacciato Rovere Carbone con dettagli in Grigio Antracite.",
         initial_material: "Rovere Carbone",
-        initial_color: "Legno Scuro",
+        initial_color: "Bianco",
         tipologia: "GUARDAROBA"
     },
     {
@@ -625,7 +625,7 @@ const catalogItems = [
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/cefcbc41-888a-4e89-a1f7-b80621f45d7c/nuctwf/std/700x0/Walk-in-Fluida_pag_14-15.jpg",
         description: "Prodotto da Scavolini. Eleganza trasparente. Ante telaio alluminio Grigio Antracite con vetro Fumé.",
         initial_material: "Vetro Fumé",
-        initial_color: "Grigio Antracite",
+        initial_color: "Vetro Fumé",
         tipologia: "GUARDAROBA"
     },
     { 
@@ -636,7 +636,7 @@ const catalogItems = [
         price: 2400.00, 
         imageUrl: "https://scavolini-cdn.thron.com/delivery/public/image/scavolini/8067bd4e-6d7e-496e-bcc1-c5f46dc59462/nuctwf/std/900x0/TAVOLO_MANHATTAN_pag_93.jpg",
         description: "Prodotto da Scavolini. Collezione EveryTime. Tavolo elegante con piano in Laminato Statuario.",
-        initial_material: "Laminato Statuario",
+        initial_material: "Marmo",
         initial_color: "Marmo Bianco",
         tipologia: "TAVOLO"
     },
@@ -656,20 +656,56 @@ const catalogItems = [
 
 // --- AI LOGIC (ANALISI TESTO & VISIONE) ---
 // Ora accetta anche un parametro 'isIterative' per capire se è una modifica successiva
-const getAICustomization = async (messages, availableProducts = [], isIterative = false) => {
+const getAICustomization = async (messages, item, availableProducts = [], isIterative = false) => {
     const productsList = availableProducts.map(p => `${p.title} (di ${p.brand})`).join(", ");
     
-    // System Prompt avanzato che gestisce contesto, multi-colore e iterazioni
+    // System Prompt avanzato che gestisce contesto, disambiguazione e priorità
     const systemPrompt = `
-SEI: Un Interior Designer AI di alto livello, empatico e versatile.
-OBIETTIVO: Capire se il cliente sta chiedendo un CONSIGLIO o facendo una RICHIESTA DIRETTA e agire di conseguenza.
-USA SEMPRE LA CRONOLOGIA DELLA CONVERSAZIONE PER RECUPERARE IL CONTESTO (ES. DESCRIZIONE STANZA, PAVIMENTO) SE L'UTENTE NON LO RIPETE.
+SEI: Un Interior Designer AI di alto livello, empatico e versatile di nome Giotto.
 
 ---
 
+### 🚨 CONTESTO OBBLIGATORIO (DA NON DIMENTICARE MAI)
+L'utente sta visualizzando, chiedendo consigli o modificando ESCLUSIVAMENTE questo oggetto:
+- **Nome:** "${item.title}"
+- **Brand:** "${item.brand}"
+- **Materiale Attuale:** "${item.initial_material}"
+- **Colore Attuale:** "${item.initial_color}"
+- **Prezzo Base:** ${item.price}€
+
+REGOLA 1: Se l'utente dice "questo", "il mobile", "la cucina" o non specifica il soggetto, si riferisce SEMPRE a "${item.title}". NON chiedere MAI "quale mobile vuoi modificare?".
+REGOLA 2: Se l'utente descrive la stanza (es. "ho le pareti blu"), NON modificare il mobile o lo sfondo a meno che non sia una conseguenza logica. Usa quella info solo per dare consigli.
+
+---
+
+### 🧠 REGOLE DI DISAMBIGUAZIONE (CRUCIALE)
+Devi distinguere intelligentemente se l'utente parla del **MOBILE** o della **STANZA**, specialmente se usa la stessa parola (es. "Cucina").
+
+1. **QUANDO SI RIFERISCE ALLA STANZA (CONTESTO):**
+   - Se l'utente dice: "La **mia** cucina...", "La cucina **ha le pareti**...", "Il **pavimento** della cucina...", "**Nella** cucina c'è...".
+   - **AZIONE:** Considera queste informazioni SOLO come vincoli ambientali per darti idee (Es. "Ah, hai pareti blu? Allora ti consiglio il mobile bianco"). **NON modificare l'immagine basandoti su questo.**
+
+2. **QUANDO SI RIFERISCE AL MOBILE (OGGETTO):**
+   - Se l'utente dice: "**Questa** cucina...", "**Voglio** la cucina...", "Falla...", "Cambia...", "Il mobile...".
+   - **AZIONE:** Questa è una richiesta di modifica. Genera la 'edit_instruction' per cambiare l'aspetto del mobile.
+
+---
+
+### 🚫 REGOLA SUPREMA GENERAZIONE IMMAGINI (IMPORTANTE)
+Quando generi la stringa per 'edit_instruction':
+1. Descrivi SOLO il mobile e le sue nuove caratteristiche (materiale, colore).
+2. **NON descrivere MAI l'ambiente circostante, le pareti o il pavimento.**
+   - Esempio ERRATO: "A white kitchen in a room with blue walls". (Questo colorerebbe i muri!)
+   - Esempio CORRETTO: "Modern white matte kitchen cabinets, high quality texture".
+3. Usa la descrizione della stanza dell'utente (es. "pareti blu") SOLO per decidere il colore del mobile (es. "ti consiglio il bianco"), ma NON scriverlo nella 'edit_instruction'.
+
+---
+
+OBIETTIVO: Capire se il cliente sta chiedendo un CONSIGLIO o facendo una RICHIESTA DIRETTA e agire di conseguenza.
+USA SEMPRE LA CRONOLOGIA DELLA CONVERSAZIONE PER RECUPERARE IL CONTESTO.
+
 PROTOCOLLO DI INPUT (COME RICEVI I DATI)
-Riceverai sempre una informazione:
-A. *MOBILE SELEZIONATO:* (es. "Letto", "Divano", "Madia"). -> Da qui deduci la funzione della stanza.
+Riceverai sempre una informazione implicita: il MOBILE SELEZIONATO è quello indicato sopra nel contesto.
 
 ### 1. ANALISI DELL'INTENTO
 Analizza il testo dell'utente per capire cosa vuole:
@@ -720,12 +756,12 @@ CAMPI FONDAMENTALI:
     - Imposta a **TRUE** se l'utente sta cambiando completamente idea, sta chiedendo una variante alternativa che annulla la precedente, o sta ricominciando da zero (es. "Falla bianca" dopo averla fatta rossa, "Meglio in legno", "Non mi piace, cambia", "Fammi vedere l'opzione X").
     - Imposta a **FALSE** se l'utente sta raffinando, aggiungendo dettagli o modificando solo una parte dell'immagine corrente (es. "Fai i pensili bianchi" mantenendo le basi, "Aggiungi una pianta", "Scurisci leggermente").
 - **edit_instruction**: (Stringa in INGLESE). Istruzioni per il generatore di immagini.
+    - DESCRIVI SOLO IL MOBILE. NON DESCRIVERE LO SFONDO O LA STANZA.
     - Se 'reset_to_original' è TRUE: Descrivi il mobile completo con le nuove specifiche.
     - Se 'reset_to_original' è FALSE: Descrivi SOLO la modifica specifica da applicare all'immagine esistente.
 - **new_material**: (Stringa). Materiale principale in italiano.
 - **new_color**: (Stringa). Colore principale in italiano.
 - **response_text**: (Stringa). Risposta discorsiva per l'utente (Diagnosi + Consiglio + Motivo se è un consiglio, oppure conferma se è richiesta diretta).
-
 `;
     
     const responseSchema = {
@@ -1037,7 +1073,7 @@ const Header = ({ onOpenAbout, onOpenCart, cartCount }) => (
                 <button onClick={onOpenCart} className="relative p-2 text-white hover:text-emerald-300 transition-colors">
                     <ShoppingCart className="w-6 h-6" />
                     {cartCount > 0 && (
-                        <span className="absolute -top-1 -right-1 bg-emerald-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-neutral-900">
+                        <span className="absolute -top-1 -right-1 bg-emerald-50 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-neutral-900">
                             {cartCount}
                         </span>
                     )}
@@ -1167,8 +1203,8 @@ const AboutUsPage = ({ onClose }) => (
                             <h3 className="text-xl font-medium text-neutral-900">{member.name}</h3>
                             <p className="text-emerald-600 font-medium text-sm mt-1">{member.role}</p>
                         </div>
-                    </div>
-                ))}
+                   </div>
+               ))}
             </div>
             <div className="text-center pt-20">
                 <p className="text-neutral-400 text-sm">DesignGeniusAI © 2025</p>
@@ -1312,7 +1348,7 @@ const CatalogSelector = ({ onSelectFurniture, onAddToCart, onViewAR, cartCount, 
                         <button onClick={onOpenCart} className="p-2 bg-neutral-900 hover:bg-black text-white rounded-full transition-colors flex items-center gap-2 text-sm font-medium px-4 shadow-lg relative">
                             <ShoppingCart className="w-4 h-4" /> Carrello
                             {cartCount > 0 && (
-                                <span className="bg-emerald-500 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full ml-1">
+                                <span className="bg-emerald-50 text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full ml-1">
                                     {cartCount}
                                 </span>
                             )}
@@ -1680,7 +1716,8 @@ const ChatInterface = ({ item, onClose, onAddToCart }) => {
             const historyForApi = [...messages, userMsg];
             // 1. Usa Gemini TEXT per capire le intenzioni complesse (multi-colore, prospettiva)
             // Passiamo 'isIterative' per dire al sistema se stiamo modificando un render esistente
-            const analysis = await getAICustomization(historyForApi, catalogItems, isIterative);
+            // MODIFICATO: aggiunto 'item' alla chiamata per il contesto
+            const analysis = await getAICustomization(historyForApi, item, catalogItems, isIterative);
             
             let newItemState = { ...currentItemState };
             let surcharge = 0;
