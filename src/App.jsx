@@ -768,7 +768,7 @@ Strategia: Focalizzati sull'atmosfera in base al Mobile Selezionato (Fonte: Abit
 ### 3. OUTPUT STRUTTURATO PER L'APP
 Devi produrre un JSON che guidi l'applicazione.
 CAMPI FONDAMENTALI:
-- **reset_to_original**: (Booleano). CRUCIALE.
+- **reset_to_original**: (Booleano). CRUCIALE. Devi capire se l'utente vuole raffinare l'immagine attuale o provare una variante completamente nuova.
     - Imposta a **TRUE** se l'utente sta cambiando completamente idea, sta chiedendo una variante alternativa che annulla la precedente, o sta ricominciando da zero (es. "Falla bianca" dopo averla fatta rossa, "Meglio in legno", "Non mi piace, cambia", "Fammi vedere l'opzione X").
     - Imposta a **FALSE** se l'utente sta raffinando, aggiungendo dettagli o modificando solo una parte dell'immagine corrente (es. "Fai i pensili bianchi" mantenendo le basi, "Aggiungi una pianta", "Scurisci leggermente").
 - **edit_instruction**: (Stringa in INGLESE). Istruzioni per il generatore di immagini.
