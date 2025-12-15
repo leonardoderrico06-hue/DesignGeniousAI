@@ -43,7 +43,7 @@ const teamMembers = [
     {    
         id: 4, name: "Costanza Del Bono", 
         role: "Interior Architect", 
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
+        image: "https://lh3.googleusercontent.com/d/1TioeBhOHht3n6_4-8nRpwzrRD5q3GeBF" 
     },
     { 
         id: 5, 
