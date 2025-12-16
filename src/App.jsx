@@ -13,12 +13,14 @@ const STANDARD_KEYWORDS = [
 const EXTRA_COST = 300.00;
 
 // --- CONFIGURAZIONE API ---
-// L'API key viene fornita dall'ambiente Canvas in fase di runtime, la lasciamo vuota come standard
+// L'API key viene fornita dall'ambiente Canvas in fase di runtime.
 const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
-// MODELLI GOOGLE
-const GEMINI_TEXT_MODEL_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
-// Usiamo il modello specifico per l'editing/generazione di immagini
+
+// MODELLI GOOGLE CORRETTI E STABILI
+// FIX 503: Usiamo il modello preview specifico che è garantito in questo ambiente
+const GEMINI_TEXT_MODEL_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=";
+// FIX: Modello ottimizzato per manipolazione immagini
 const GEMINI_IMAGE_EDIT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=";
 
 const teamMembers = [
@@ -720,8 +722,7 @@ Nel caso B, oltre al mobile selezionato, come INPUT, PUOI ricevere:
 
 ### 📸 GESTIONE FOTO CARICATE DALL'UTENTE (CRUCIALE)
 Se l'utente carica una foto, quella rappresenta la sua **STANZA ATTUALE** (il contesto "AS-IS").
-1.  **INTERPRETAZIONE DELLO SCENARIO:** 
-  - **Se nella foto vedi una cucina, un tavolo o un bagno, NON è la "${item.title}". È il vecchio mobile dell'utente che vuole sostituire. Non dire mai "Vedo che hai già la Metropolis o altri modelli di mobili". NON CONFONDERE MAI I MOBILI!
+1.  **INTERPRETAZIONE DELLO SCENARIO:** - **Se nella foto vedi una cucina, un tavolo o un bagno, NON è la "${item.title}". È il vecchio mobile dell'utente che vuole sostituire. Non dire mai "Vedo che hai già la Metropolis o altri modelli di mobili". NON CONFONDERE MAI I MOBILI!
   - **Se la stanza è VUOTA o comunque con pochi mobili:** Considerala una tela bianca. Analizza pavimento, pareti e infissi.
   - **Se la foto è un dettaglio (es. solo un muro colorato, una piastrella, un campione):** L'utente ti sta mostrando un vincolo specifico. NON chiedere "che colore è?". Dillo tu: "Vedo che hai pareti di una tonalità [Colore Rilevato]...".
 2. **ANALISI TECNICA:** Guarda la foto e analizza:
@@ -802,6 +803,12 @@ CAMPI FONDAMENTALI:
             }
             parts.push({ text: textContent });
         }
+        // MODIFICA CRITICA: Aggiunta del supporto per immagini nella history della chat
+        // Ora l'AI può effettivamente "vedere" le foto caricate dall'utente
+        if (msg.image) {
+             const base64Data = msg.image.split(',')[1];
+             parts.push({ inlineData: { mimeType: "image/jpeg", data: base64Data } });
+        }
         return {
             role: msg.role === 'ai' ? 'model' : 'user',
             parts: parts
@@ -843,20 +850,12 @@ const fetchImageWithProxy = async (url) => {
         return await res.blob();
     }
 
-    // 1. Tentativo Diretto (CORS)
-    try {
-        const response = await fetch(url);
-        if (response.ok) return await response.blob();
-    } catch (e) {
-        // Fallback silently
-    }
-
-    // 2. Tentativo Proxy Multiplo
-    const timestamp = new Date().getTime();
+    // FIX CORS: Usiamo SEMPRE i proxy per le immagini esterne per evitare errori
+    // In questo modo il browser non prova nemmeno la connessione diretta che fallirebbe
     const proxies = [
         `https://corsproxy.io/?${encodeURIComponent(url)}`,
-        `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}&t=${timestamp}`
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+        // `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}` // Often rate limited
     ];
 
     for (const proxyUrl of proxies) {
@@ -867,7 +866,7 @@ const fetchImageWithProxy = async (url) => {
                 if (blob.size > 0) return blob;
             }
         } catch (e) {
-            console.warn(`Proxy ${proxyUrl} failed`);
+            // Silenzioso, passa al prossimo proxy
         }
     }
 
